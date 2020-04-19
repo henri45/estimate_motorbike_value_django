@@ -17,7 +17,6 @@ def convert_price(text):
   return int(price)
 
 def convert_date(text):
-  print("CONVERT")
   if "minute" in text:
     return str(datetime.date.today())
 
@@ -44,6 +43,7 @@ def convert_date(text):
   if "months" in text:
     months = int(''.join(filter(str.isdigit, text)))
     return str(datetime.date.today() - datetime.timedelta(days=30*months))
+
 
 def convert_views(text):
   views = int(''.join(filter(str.isdigit, text)))
