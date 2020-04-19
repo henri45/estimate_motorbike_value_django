@@ -17,7 +17,6 @@ def runspider():
   spiderObj=scrapy_var.MotorbikeWesterncapeSpider           #get mySpider-object from spider module
   # 'followall' is the name of one of the spiders of the project.
 
-
   crawler = CrawlerRunner(get_project_settings())
   crawler.crawl(spiderObj)
   os.chdir("../..")

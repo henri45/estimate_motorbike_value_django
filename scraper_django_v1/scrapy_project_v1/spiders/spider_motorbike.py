@@ -10,10 +10,12 @@ class MotorbikeWesterncapeSpider(scrapy.Spider):
     name = 'motorbike_westerncape'
     #allowed_domains = ['https://www.gumtree.co.za/s-motorcycles-scooters/western-cape/v1c9027l3100001p1']
     start_urls = ['https://www.gumtree.co.za/s-motorcycles-scooters/v1c9027p1']
+
     ads_item = ItemLoader()
 
 
     def parse(self, response):
+      print("coucou")
       links_ads = response.xpath("//div[@class='title mult-lines-lt-1280']//@href").getall()
 
       ##Start with the start_urls
@@ -33,6 +35,7 @@ class MotorbikeWesterncapeSpider(scrapy.Spider):
 
     #parse an ads.
     def parse_ads(self, response):
+      print("parse_ads")
       loader = ItemLoader(item=AdsItem(), response = response)
       loader.add_value('url', response.request.url)
       loader.add_xpath('title', "//h1/text()")
@@ -67,5 +70,6 @@ class MotorbikeWesterncapeSpider(scrapy.Spider):
         loader.add_value(name, attribute.css(".value::text").get())
 
       ads_item = loader.load_item()
+      print(ads_item)
 
       return ads_item

@@ -19,10 +19,20 @@ class GumtreeScraperPipeline(object):
         """Save ads in the database
         This method is called for every item pipeline component
         """
-        print('SUPER')
-        table = self.dynamodb.Table('ads')
-        table.put_item(
-           Item=dict(item)
-        )
-        print("ok")
+        table = self.dynamodb.Table('ads_motorbike2')
+
+        try:
+            print("try")
+            response = table.get_item(
+            Key={
+                'title': item['title'],
+            }
+            )
+            print(response['Item']['title'])
+        except:
+            print("Adding in the DB:")
+            table.put_item(
+             Item=dict(item)
+            )
+
         return item
