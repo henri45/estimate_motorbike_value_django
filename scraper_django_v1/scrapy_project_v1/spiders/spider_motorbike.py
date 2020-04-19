@@ -28,10 +28,10 @@ class MotorbikeWesterncapeSpider(scrapy.Spider):
         #yield scrapy.Request(ads, callback = self.parse_ads)
 
       #Go to the next page
-      #next_page = response.xpath("//*[contains(@class,'icon-pagination-right')]//@href").get()
-      #if next_page is not None:
-      #  next_page_link = response.urljoin(next_page)
-      #  yield scrapy.Request(next_page_link, callback = self.parse)
+      next_page = response.xpath("//*[contains(@class,'icon-pagination-right')]//@href").get()
+      if next_page is not None:
+        next_page_link = response.urljoin(next_page)
+        yield scrapy.Request(next_page_link, callback = self.parse)
 
     #parse an ads.
     def parse_ads(self, response):
