@@ -19,5 +19,5 @@ from scraper_django_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('crawl/', views.crawl, name = 'crawl')
+    path('crawl/', views.crawl, name = 'crawl'),
 ]
