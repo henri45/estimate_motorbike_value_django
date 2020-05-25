@@ -9,7 +9,7 @@ I collected a 5000 motorbikes database using the framework Scrapy. I chose it as
 Many tutorial are available online. @Harry Wang help me a lot with a easy-to-follow medium tutorial https://towardsdatascience.com/a-minimalist-end-to-end-scrapy-tutorial-part-i-11e350bcdec0. 
 The infography bellow sum up well how Scrapy is working. 
 
-SCRAPY INFOGRAPHIE
+![alt text](https://github.com/henri45/estimate_motorbike_value_django/blob/master/Screen/scrapy_logic.png)
 
 
 The Scrapy project can be run locally. The folder to fork is: scraper_django/estimate_motorbike_value_django/scrapy_project. 
@@ -44,10 +44,25 @@ I treated the data in the Global_analyse.ipynb file.
 The most challengning part was to match the data between the 2 websites I used. The same bike had often 2 different names. It required a lot of manual correction. Also, I had to deal with many missing values. For instance, the engine displacement was missing in 25% of the ads. I created a function which collects the engine power in the title of the ads when it appears. I commented my notebook as much as possible. Feel free to look at it.
 
 ### Data Visualisation
+
+#### Explanatory Data Analysis
 Here are the most important visualisation from my Explanatory Data Analysis part.
 
+![alt text](https://github.com/henri45/estimate_motorbike_value_django/blob/master/Screen/Ads_type.png)
 
+![alt text](https://github.com/henri45/estimate_motorbike_value_django/blob/master/Screen/Brands.png)
 
+![alt text](https://github.com/henri45/estimate_motorbike_value_django/blob/master/Screen/Km_hist.png)
+
+![alt text](https://github.com/henri45/estimate_motorbike_value_django/blob/master/Screen/Year_old_hist.png)
+
+![alt text](https://github.com/henri45/estimate_motorbike_value_django/blob/master/Screen/Price_hist.png)
+
+#### BMW 800F GS
+
+Let's have a focus with this specific model.
+
+![alt text](https://github.com/henri45/estimate_motorbike_value_django/blob/master/Screen/BMW800GS.png)
 
 
 
