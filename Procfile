@@ -1,1 +1,1 @@
-web: gunicorn scraper_django_v1.wsgi
+web: gunicorn estimate_motorbike_value_django.wsgi

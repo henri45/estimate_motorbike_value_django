@@ -1,5 +1,5 @@
 """
-WSGI config for scraper_django_v1 project.
+WSGI config for estimate_motorbike_value_django project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -12,6 +12,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'scraper_django_v1.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'estimate_motorbike_value_django.settings')
 
 application = get_wsgi_application()

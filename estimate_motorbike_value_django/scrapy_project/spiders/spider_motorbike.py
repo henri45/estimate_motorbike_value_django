@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
-from scraper_django_v1.scrapy_project_v1.items import AdsItem
+from estimate_motorbike_value_django.scrapy_project.items import AdsItem
 from scrapy.loader import ItemLoader
 import datetime
 

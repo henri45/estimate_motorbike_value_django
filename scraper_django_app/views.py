@@ -1,5 +1,5 @@
 from django.shortcuts import render
-#from scraper_django_v1.scrapy_project_v1.spiders.spider_motorbike import MotorbikeWesterncapeSpider
+#from estimate_motorbike_value_django.scrapy_project.spiders.spider_motorbike import MotorbikeWesterncapeSpider
 import os
 from scrapy.crawler import CrawlerRunner
 from scrapy.utils.project import get_project_settings
@@ -11,8 +11,8 @@ from scrapy.utils.log import configure_logging
 setup()
 
 def crawl(request):
-  os.chdir("scraper_django_v1/scrapy_project_v1")
-  module_name="scraper_django_v1.scrapy_project_v1.spiders.{}".format('spider_motorbike')
+  os.chdir("estimate_motorbike_value_django/scrapy_project")
+  module_name="estimate_motorbike_value_django.scrapy_project.spiders.{}".format('spider_motorbike')
   scrapy_var = import_module(module_name)   #do some dynamic import of selected spider
   spiderObj=scrapy_var.MotorbikeWesterncapeSpider           #get mySpider-object from spider module
 

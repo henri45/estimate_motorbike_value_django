@@ -5,7 +5,7 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'scraper_django_v1.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'estimate_motorbike_value_django.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

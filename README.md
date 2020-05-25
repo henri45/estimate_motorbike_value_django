@@ -12,7 +12,7 @@ The infography bellow sum up well how Scrapy is working.
 SCRAPY INFOGRAPHIE
 
 
-The Scrapy project can be run locally. The folder to fork is: scraper_django/scraper_django_v1/scrapy_project_v1. 
+The Scrapy project can be run locally. The folder to fork is: scraper_django/estimate_motorbike_value_django/scrapy_project. 
 
 ### DataBase
 I tried 3 databases for storing the ads scraped.
