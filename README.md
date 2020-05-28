@@ -58,11 +58,50 @@ Here are the most important visualisation from my Explanatory Data Analysis part
 
 ![alt text](https://github.com/henri45/estimate_motorbike_value_django/blob/master/Screen/Price_hist.png)
 
-#### BMW 800F GS
-
-Let's have a focus with this specific model.
-
 ![alt text](https://github.com/henri45/estimate_motorbike_value_django/blob/master/Screen/BMW800GS.png)
+
+## Predicting models
+### Feature engineering
+
+I decided to keep in the data base only the bike with at least 25 ads scrapped.  I end up with 22 different bikes. I tried to use different set of variables:
+
+- Year
+- Kilometers
+- Year & Kilometers
+- Brand & Model & Kilometers & Year
+
+### Predictors 
+
+I used the following methods:
+
+- Linear Regression
+- Polynomial Linear Regression
+- Random Forest
+- XGboost
+
+### Evaluating the models
+
+For each model, the data has been splitted into a training and a testing set. The Mean Absolute Error (MAE) has been used to compare them. Here are the results: 
+
+SCREEN
+
+NB: Except for the "xgb_full_data" and "random_forest_full_data", this table is actually the mean of the MAE for the 22 predictors (one per bike). For each bike, 8 different predictors have been tried. Each predictor have been trained 5 times, changing the training and testing set each time.
+
+SCREEN
+
+### Going further
+
+In order to improve the accuracy of the models, one could work on:
+- removing the outliers
+- collecting more data (by scrapping a new website)
+- create new features using NLP (ABS, bike accidented, service history available...)
+
+Conclusion: This project was learningful. I improve my scrapping skills (Scrapy + Scrapyd), my knowledge in DataBase (SQLite, Postgres, Dynamo DB), my knowledge with Django and how to deploy apps on Heroku. I will keep collecting data as my next project could be building a website to help South African people to estimate the value of their motorbike.
+
+
+
+
+
 
 
 
