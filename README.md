@@ -28,20 +28,20 @@ DynamoDB is a NoSQL offrered by Amazon. I used it as the free Tier includes 25GB
 ## Scheduling the crawlers
 Once my spider was working, I looked for scheduling it. I used scrapyd, Django and Heroku to deploy it. Then I realised that scheduling the spider localy with CronTab was just easier.
 ### Scrapyd
-Scrapyd is an application for deploying Scrapy spiders. It's handy as one can run multiple spiders though a webservice. 
+Scrapyd is an application for deploying Scrapy spiders. It's handy as one can run multiple spiders through a webservice. 
 
 ### Django-Scrapyd
 Django is a famous Web App framework in python. I used it to wrappe my Scrpayd application in order to add features (such as the possibility to schedule the spider run). The alternative would be using the scrapy commercial service https://scrapinghub.com or deploying scrapyd with a client such as Scrapyd-client (https://github.com/scrapy/scrapyd-client). I tried the second option with Heroku but at some point it required a SSL certificate that one have to pay for.
 The Django app (in this repo) is very simple. It contains the Scrapyd app and a scheduler which run the spider every x minutes.
 
 ### Using CronTab locally
-Heroku free plans shutdown the app if not used. For this reason I decided to schedule my crawler with CronTab. I saved the results in a SQLite database. 
+Using the Heroku free plans involves having the app shutdown if no request were done. For this reason I decided to use collect the data from my own computer. I scheduled the crawlers with CronTab. I saved the results in a SQLite database. 
 
 ## Data utilisation
 I treated the data in the Global_analyse.ipynb file.
 
 ### Data Cleaning
-The most challengning part was to match the data between the 2 websites I used. The same bike had often 2 different names. It required a lot of manual correction. Also, I had to deal with many missing values. For instance, the engine displacement was missing in 25% of the ads. I created a function which collects the engine power in the title of the ads when it appears. I commented my notebook as much as possible. Feel free to look at it.
+The most challengning part was to match the data between the 2 websites I used. The same bike has often 2 different names. It required a lot of manual correction. Also, I had to deal with many missing values. For instance, the engine displacement was missing in 25% of the ads. I created a function which collects the engine power in the title of the ads when it appears. 
 
 ### Data Visualisation
 
@@ -83,11 +83,11 @@ I used the following methods:
 
 For each model, the data has been splitted into a training and a testing set. The Mean Absolute Error (MAE) has been used to compare them. Here are the results: 
 
-SCREEN
+![alt text](https://github.com/henri45/estimate_motorbike_value_django/blob/master/Screen/results_model.png)
 
-NB: Except for the "xgb_full_data" and "random_forest_full_data", this table is actually the mean of the MAE for the 22 predictors (one per bike). For each bike, 8 different predictors have been tried. Each predictor have been trained 5 times, changing the training and testing set each time.
+NB: Except for the "xgb_full_data" and "random_forest_full_data", this table is actually the mean of the MAE for the 22 predictors (one per bike). For each bike, 8 different predictors have been tried. Each predictor have been trained 5 times, changing the training and testing set each time. At the end the Mean of the 5 MAE is done to determine how effective is the predictor for this bike.
 
-SCREEN
+![alt text](https://github.com/henri45/estimate_motorbike_value_django/blob/master/Screen/result_model_bmw800Fgs.png)
 
 ### Going further
 
@@ -97,11 +97,3 @@ In order to improve the accuracy of the models, one could work on:
 - create new features using NLP (ABS, bike accidented, service history available...)
 
 Conclusion: This project was learningful. I improve my scrapping skills (Scrapy + Scrapyd), my knowledge in DataBase (SQLite, Postgres, Dynamo DB), my knowledge with Django and how to deploy apps on Heroku. I will keep collecting data as my next project could be building a website to help South African people to estimate the value of their motorbike.
-
-
-
-
-
-
-
-
